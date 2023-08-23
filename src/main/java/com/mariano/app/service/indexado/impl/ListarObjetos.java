@@ -8,13 +8,12 @@ import com.mariano.app.input.IngresoPorScanner;
 import com.mariano.app.service.crear.AgregarJugadorInterface;
 import com.mariano.app.service.crear.impl.AgregarJugador;
 import com.mariano.app.service.indexado.ListarObjetosInterface;
-import com.mariano.app.service.menu.VolverAlMenu;
 
 public class ListarObjetos implements ListarObjetosInterface{
 	
 	public static ListarObjetosInterface listarObjetos = new ListarObjetos();
 	
-	static List<Jugador> listaDeJugadores = new ArrayList<>();
+	public static List<Jugador> listaDeJugadores = new ArrayList<>();
 	static AgregarJugadorInterface agregaJugador = new AgregarJugador();
 	static int cantidad;
 	
@@ -32,9 +31,8 @@ public class ListarObjetos implements ListarObjetosInterface{
 	public void mostrarJugadores() {
 		System.out.println("Jugadores Actuales:");
 		for(int i=0; i<listaDeJugadores.size(); i++) {
-			System.out.println("\t"+listaDeJugadores.get(i).getNombre());
+			System.out.println("\t"+(i+1)+" - "+listaDeJugadores.get(i).getNombre());
 		}
-		VolverAlMenu.retornar();
 	}
 
 }

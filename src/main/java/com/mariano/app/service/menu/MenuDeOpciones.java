@@ -1,7 +1,9 @@
 package com.mariano.app.service.menu;
 
 import com.mariano.app.input.IngresoPorScanner;
+import com.mariano.app.service.busqueda.impl.Recorrer;
 import com.mariano.app.service.ejecucion.impl.Ejecutar;
+import com.mariano.app.service.eliminar.impl.Quitar;
 import com.mariano.app.service.indexado.impl.ListarObjetos;
 
 
@@ -14,9 +16,10 @@ public class MenuDeOpciones {
 		
 		System.out.println("0- Salir\n"
 				+ "1- Agregar Jugadores\n"
-				+ "2- Ver Lista de Jugadores\n"
-				+ "3- Empezar Juego\n"
-				+ "4- Agregar/Quitar un Jugador en Medio de la Partida");
+				+ "2- Quitar Jugador\n"
+				+ "3- Ver Lista de Jugadores\n"
+				+ "4- Empezar Partida\n"
+				+ "5- Agregar/Quitar un Jugador en Medio de la Partida");
 		
 		opcion = IngresoPorScanner.entradaDeNumero();
 		
@@ -29,7 +32,13 @@ public class MenuDeOpciones {
 			VolverAlMenu.retornar();
 			break;
 		case 2:
+			Quitar.quitarJugador.quitarJugador(Recorrer.recorrer.existeJugador());
+			VolverAlMenu.retornar();
+			break;
+		case 3:
 			ListarObjetos.listarObjetos.mostrarJugadores();
+			VolverAlMenu.retornar();
+			break;
 		}
 	}
 
