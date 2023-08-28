@@ -5,6 +5,7 @@ import com.mariano.app.service.busqueda.impl.Recorrer;
 import com.mariano.app.service.ejecucion.impl.Ejecutar;
 import com.mariano.app.service.eliminar.impl.Quitar;
 import com.mariano.app.service.indexado.impl.ListarObjetos;
+import com.mariano.app.service.menu.impl.Condicionales;
 
 
 public class MenuDeOpciones {
@@ -39,6 +40,9 @@ public class MenuDeOpciones {
 			ListarObjetos.listarObjetos.mostrarJugadores();
 			VolverAlMenu.retornar();
 			break;
+		case 4:
+			Condicionales.condicionalesInt.empezarSiHayJugadores();
+			VolverAlMenu.retornar();
 		}
 	}
 
